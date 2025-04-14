@@ -1,0 +1,147 @@
+/* Основные стили карусели */
+.courses-carousel {
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .carousel-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #2b2d42;
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .course-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .course-info {
+    padding: 20px;
+  }
+  
+  .course-category {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #4361ee;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .course-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #2b2d42;
+  }
+  
+  .course-rating {
+    color: #ffb703;
+    margin: 10px 0;
+  }
+  
+  .course-price {
+    font-weight: bold;
+    color: #4361ee;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .course-button {
+    width: 100%;
+    padding: 10px;
+    background: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .course-button:hover {
+    background: #3a56d4;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-arrow.left {
+    left: 10px;
+  }
+  
+  .carousel-arrow.right {
+    right: 10px;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dot.active {
+    background: #4361ee;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-arrow {
+      display: none;
+    }
+    
+    .course-card {
+      max-width: 100%;
+    }
+  }

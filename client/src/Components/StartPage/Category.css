@@ -1,0 +1,83 @@
+
+.categories-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2b2d42;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+  }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .category-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .category-title {
+    font-size: 1.3rem;
+    color: #2b2d42;
+    margin-bottom: 10px;
+  }
+  
+  .category-courses {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  /* Кнопка */
+  .view-all-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .view-all-btn:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+  }

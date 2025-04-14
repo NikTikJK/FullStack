@@ -1,0 +1,162 @@
+/* Основные стили футера */
+.footer {
+    background: #2b2d42;
+    color: #ffffff;
+    padding: 60px 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+  }
+  
+  .footer-section {
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo span {
+    color: #4361ee;
+  }
+  
+  .footer-description {
+    color: #adb5bd;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Социальные иконки */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #4361ee;
+  }
+  
+  /* Заголовки разделов */
+  .footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #4361ee;
+  }
+  
+  /* Ссылки */
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+  }
+  
+  /* Контакты */
+  .footer-contact {
+    list-style: none;
+  }
+  
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #adb5bd;
+  }
+  
+  .contact-icon {
+    margin-right: 10px;
+    color: #4361ee;
+    font-size: 1.2rem;
+  }
+  
+  /* Нижняя часть футера */
+  .footer-bottom {
+    background: #1a1a2e;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .footer-bottom p {
+    margin-bottom: 10px;
+    color: #adb5bd;
+  }
+  
+  .legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .legal-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .legal-links a:hover {
+    color: #ffffff;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .footer-section {
+      text-align: center;
+    }
+    
+    .footer-section h4::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+    
+    .footer-contact li {
+      justify-content: center;
+    }
+  }
