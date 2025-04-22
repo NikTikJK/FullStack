@@ -1,0 +1,171 @@
+.grades-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .grades-title {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .grades-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 200px;
+  }
+  
+  .grades-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+  
+  .grade-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .grade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .course-info {
+    flex: 1;
+  }
+  
+  .course-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 18px;
+  }
+  
+  .course-category {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #7f8c8d;
+    background-color: #f5f5f5;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  
+  .grade-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  
+  .grade-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .person-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .person-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+  }
+  
+  .person-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .person-role {
+    font-size: 12px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .person-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-top: 2px;
+  }
+  
+  .grade-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .grade-date {
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .details-button {
+    background: none;
+    border: none;
+    color: #3498db;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .details-button:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .grades-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .grades-filters {
+      flex-direction: column;
+    }
+    
+    .filter-select {
+      width: 100%;
+    }
+  }

@@ -1,6 +1,9 @@
 import "./Category.css"
+import { useNavigate } from "react-router-dom";
 
 function Category() {
+  const navigate = useNavigate()
+
   return (
     <section class="categories-section">
       <div class="container">
@@ -75,7 +78,9 @@ function Category() {
           </div>
         </div>
 
-        <button class="view-all-btn">Все категории →</button>
+        <button class="view-all-btn" onClick={() => {
+          navigate("/auth")
+        }}>Все категории →</button>
       </div>
     </section>
   );

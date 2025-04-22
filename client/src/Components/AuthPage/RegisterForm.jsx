@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
@@ -40,49 +39,35 @@ const RegisterForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
-    
     if (!validate()) return;
-  
-  
-    try {
-      const response = await axios.post('http://localhost:3001/auth/register', {
-        name: formData.name,
-        email: formData.email,
-        login: formData.login,
-        password: formData.password,
-        confirmPassword: formData.confirmPassword
-      }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      if (response.data.success) {
-        navigate("/profile")
-      } else {
-        alert("что-то пошло не так");
-      }
-  
-    } catch (error) {
-      if (error.response) {
-        const { status, data } = error.response;
-        
-        if (status === 400) {
-          setErrors(data.errors || {
-            server: data.message || 'Неверные данные'
-          });
-        } else if (status === 409) {
-          alert('Пользователь с таким email/логином уже существует');
-        } else {
-          alert(`Ошибка сервера: ${status}`);
-        }
-      } else if (error.request) {
-        alert('Сервер не отвечает. Проверьте подключение к интернету');
-      } else {
-        alert('Ошибка при отправке запроса');
-      }
+
+    const postData = {
+      name: formData.name,
+      login: formData.login,
+      password: formData.password,
+      email: formData.email
+    };
+
+  try {
+    const response = await fetch("http://localhost:5000/api/users ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    });
+    
+    if (!response.ok) {
+      throw new Error('Ошибка сети');
     }
-  };
+    
+    const data = await response.json();
+    localStorage.setItem("user", JSON.stringify(data.user));
+    navigate('/profile')
+  } catch (error) {
+    console.error('Произошла ошибка:', error);
+  }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">

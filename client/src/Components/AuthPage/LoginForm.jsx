@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 
 const LoginForm = () => {
@@ -33,32 +32,29 @@ const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-  
-      
+    const postData = {
+      login: formData.login,
+      password: formData.password
+    };
+    
     try {
-      const response = await axios.post('http://localhost:3001/auth/login', {
-        login: formData.login,
-        password: formData.password
+      const response = await fetch("http://localhost:5000/api/auth", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postData)
       });
-  
-      localStorage.setItem('authToken', response.data.token);
       
-      if (response.data.user) {
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+      if (!response.ok) {
+        alert('Ошибка сети');
       }
       
-      navigate('/dashboard');
-      
+      const data = await response.json();
+      localStorage.setItem("user", JSON.stringify(data.user));
+      navigate('/profile')
     } catch (error) {
-      if (error.response) {
-        setErrors({
-          server: error.response.data.error || 'Ошибка авторизации'
-        });
-      } else {
-        setErrors({
-          server: 'Ошибка соединения с сервером'
-        });
-      }
+      alert('Произошла ошибка:', error);
     }
   };
 
